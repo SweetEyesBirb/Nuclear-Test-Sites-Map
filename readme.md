@@ -12,4 +12,4 @@ This is a small project from a first year CS student that was aiming at practici
 - © OpenStreetMap.
 
 ## Webpage Link
-**Webpage at https://sweeteyesbirb.github.io/Meteorite-Landings-Map/**
+**Webpage at https://sweeteyesbirb.github.io/Nuclear-Test-Sites-Map/**
