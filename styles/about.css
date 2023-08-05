@@ -1,0 +1,16 @@
+@import url("style.css");
+
+* {
+    color: aliceblue;
+}
+
+#main-container {
+    min-height: 100vh;
+}
+
+main {
+    border-top: solid;
+    padding-top: 3em;
+    top: 1em;
+    font-size: 1.4rem;
+}

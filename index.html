@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuclear Test Sites Map</title>
+
+    <meta name="description"
+        content="An interactive map of all the nuclear explosions, nuclear tests from 1945 to 2017. #nuclear explosions #nuclear tests #nuclear explosion map">
+    <meta name="keywords" content="nuclear explosions, nuclear tests, map">
+    <!-- does noy cause problems -->
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""> <!-- Leaflet stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.0/dist/MarkerCluster.Default.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> <!-- Leaflet script -->
+    <script defer src="https://unpkg.com/leaflet.markercluster@1.5.0/dist/leaflet.markercluster.js"></script>
+
+    <script defer src="app/index.js"></script>
+</head>
+
+<body>
+    <div id="main-container">
+
+        <header>
+            <h1 id="title-top">Nuclear Test Sites Map</h1>
+        </header>
+
+        <div id="filters-container">
+            <fieldset id="form">
+                <legend>Filter data based on country of deployment</legend>
+                <div>
+                    <input class="input" type="checkbox" id="USA" name="interest" value="USA">
+                    <label for="USA">United States</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="USSR" name="interest" value="USSR">
+                    <label for="USSR">Soviet Union</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="UK" name="interest" value="UK">
+                    <label for="UK">United Kingdom</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="FRANCE" name="interest" value="FRANCE">
+                    <label for="FRANCE">France</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="CHINA" name="interest" value="CHINA">
+                    <label for="CHINA">China</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="INDIA" name="interest" value="INDIA">
+                    <label for="INDIA">India</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="PAKISTAN" name="interest" value="PAKISTAN">
+                    <label for="PAKISTAN">Pakistan</label>
+                </div>
+                <div>
+                    <input class="input" type="checkbox" id="NORTH-KOREA" name="interest" value="NORTH KOREA">
+                    <label for="NORTH-KOREA">North Korea</label>
+                </div>
+            </fieldset>
+            <div id="btn-container">
+                <button id="btn-go" type="button" form="form" value="Go!!!!!">Go!!!!!</button>
+            </div>
+        </div>
+
+        <main role='main'>
+
+            <div id="map">
+                <div id="attribution">
+                    <a href="https://leafletjs.com/" target="_blank">Leaflet</a>
+                    <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a>
+                    <a href="https://github.com/Leaflet/Leaflet.markercluster">Leaflet.markercluster</a>
+                </div>
+            </div>
+
+            <div id="info-box">
+                <h2>Info</h2>
+                <br>
+                <p>This map shows the locations of all the nuclear tests that took place between 1945 and 2017.
+
+                    <br><br>It is possible however, that not all the data about nuclear tests was disclosed by the
+                    participating countries as this form of information is often classified. It is therefore resonable
+                    to think that some marks on the map are missing. Also, on some tests, multiple detonations occurred,
+                    but in the dataset they have been grouped under one entry.
+
+                    <br><br>After cross checking, I also discovered that part of the data is not accurate or is missing.
+                    For
+                    instance, the depth value in the database is often 0 which should correspond to a deflagration on
+                    the surface, however, when double checking on Wikipedia, it can be seen that the deflagrations took
+                    place at different altitudes or depths.
+
+                    <br>A possible cause could be attributed to how the data was scraped and cleaned before saving it in
+                    a file.
+                    However, following a manual check and update, the coordinates seem to be quite close to those found
+                    on
+                    Wikipedia.
+                    <br>For the reasons mentioned above, only one type of filter was created. Nevertheless, the map
+                    gives a good idea of how many tests have been carried and by what country.
+
+                    <br><br>There is still a lot of data that should be reviewed and amended. I have found more than 600
+                    tests with no name. According to Wikipedia, a lot of them have just numbers instead of names.
+                    I will try to give a name to all of the entries in the dataset. This should help me
+                    identify the tests that share a single location. Changing the decimal location of even a small
+                    fraction can help visualize the sites in a better way.
+                </p>
+
+                <div id="legend">
+                    <h2>Data Description</h2>
+                    <table>
+                        <tr>
+                            <th><strong>Attribute</strong></th>
+                            <th><strong>Value</strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>Name of event or bomb</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deploying country</strong></td>
+                            <td>Country deploying the nuclear device</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deployed region</strong></td>
+                            <td>Region where the nuclear device was deployed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>Purpose of detonation:
+                                <br><br><strong>COMBAT</strong> (WWII bombs dropped over Japan).
+                                <br><strong>FMS</strong> (Soviet test, study phenomenon of nuclear explosion).
+                                <br><strong>ME</strong> (Military Exercise).
+                                <br><strong>PNE</strong> (Peaceful nuclear explosion).
+                                <br><strong>SAM</strong> (Soviet test, accidental mode/emergency).
+                                <br><strong>SSE</strong> (French/US tests - testing safety of nuclear weapons in case of
+                                accident).
+                                <br><strong>TRANSP</strong> (Transportation-storage purposes).
+                                <br><strong>WE</strong> (British, French, US, evaluate effects of nuclear detonation on
+                                various targets).
+                                <br><strong>WR</strong> (Weapons development program).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Type</strong></td>
+                            <td>Method of deployment:
+                                <br><br><strong>ATMOSPH</strong> (Atmospheric).
+                                <br><strong>UG</strong> (underground).
+                                <br><strong>BALLOON</strong> (Balloon drop).
+                                <br><strong>AIRDROP</strong> (Airplane deployed).
+                                <br><strong>ROCKET</strong> (Rocket deployed).
+                                <br><strong>TOWER</strong> (deplyed at top of constructed tower).
+                                <br><strong>WATERSURFACE</strong> (on surface of body of water).
+                                <br><strong>BARGE</strong> (on barge boat).
+                                <br><strong>SURFACE</strong> (on surface or in shallow crater).
+                                <br><strong>UW</strong> (Underwater).
+                                <br><strong>SHAFT</strong> (Vertical Shaft underground).
+                                <br><strong>TUNNEL/GALLERY</strong> (Horizontal tunnel).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yeild</strong></td>
+                            <td>
+                                <strong>Lower: </strong>Explosion yield lower estimate in kilotons of TNT.
+                                <br><br><strong>Upper: </strong>Explosion yield upper estimate in kilotons of TNT.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnitude</strong></td>
+                            <td>
+                                <strong>Body: </strong>Body wave magnitude of explosion (mb).
+                                <br><br><strong>Surface: </strong>Surface wave magnitude of explosion (Ms).
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+
+
+        </main>
+    </div>
+    <footer class="footer" aria-label="Footer">
+        <div id="footer-content">
+            <ul>
+                <li>
+                    <a href="pages/about">About</a>
+                </li>
+                <li>
+                    <p>Data source: <a href="https://corgis-edu.github.io/corgis/json/nuclear_explosions/">CORGIS
+                            Dataset Project</a></p>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
