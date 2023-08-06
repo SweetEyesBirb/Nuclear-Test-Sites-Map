@@ -32,7 +32,7 @@ function main() {
     async function fetchData() {
 
         let fetchDataPromise;
-        const response = await fetch("../data/nuclear_explosions.json");
+        const response = await fetch("data/nuclear_explosions.json");
         const objects = await response.json();
 
         if (fetchDataPromise) {
@@ -166,7 +166,7 @@ const btnGo = document.getElementById("btn-go");
         btnGo.disabled = true;
         setTimeout(function() {
             btnGo.disabled = false;
-        }, 3000);
+        }, 2000);
     });
 
     window.onload = () => {
