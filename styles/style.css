@@ -86,6 +86,10 @@ button:active{
     background-color: hsla(264, 100%, 20%, .7);
 }
 
+button:disabled:hover {
+    background-color: grey;
+}
+
 /* Map */
 #map {
     height: 90vh;
@@ -148,6 +152,10 @@ dt, dd {
     font-size: 1.3em;
     line-height: 1.3em;
     font-family: 'Albert Sans', sans-serif;
+}
+
+#info-box a {
+    color: aliceblue;
 }
 
 /* table */

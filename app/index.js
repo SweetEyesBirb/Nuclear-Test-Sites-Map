@@ -153,14 +153,20 @@ function main() {
         return filteredData;
     }
 
+const btnGo = document.getElementById("btn-go");
 
-    document.getElementById("btn-go").addEventListener("click", async () => {
+    btnGo.addEventListener("click", async () => {
         try {
             const filteredData = await filterData();
             renderData(filteredData);
         } catch (error) {
             console.error("Error is: " + error);
         }
+
+        btnGo.disabled = true;
+        setTimeout(function() {
+            btnGo.disabled = false;
+        }, 3000);
     });
 
     window.onload = () => {

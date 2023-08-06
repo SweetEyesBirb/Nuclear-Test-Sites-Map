@@ -4,7 +4,7 @@
 This is a small project from a first year CS student that was aiming at practicing fetching JSON data from a dataset and its consequent manipulation. The project also aims at practicing web development using semantic HTML, CSS and JavaScript.
 
 ## Challenges
-
+Significant challenges have been encountered due to the async nature of the functions. Working with Leaflet map was also challenging since the documentation lacks of clear examples when it comes to implement methods.
 
 ## Attributions and resources
 - The map was rendered via Leaflet library in JS https://leafletjs.com/.
