@@ -32,7 +32,7 @@ function main() {
     async function fetchData() {
 
         let fetchDataPromise;
-        const response = await fetch("../data/nuclear_explosions.json");
+        const response = await fetch("data/nuclear_explosions.json");
         const objects = await response.json();
 
         if (fetchDataPromise) {
