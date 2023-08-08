@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Rubik:wght@300;400;500&display=swap');
 
+:root {
+    --background-color: #0d0021;
+    --text-color: aliceblue;
+}
+
 /* reset */
 * {
     margin: 0;
@@ -7,12 +12,11 @@
     box-sizing: border-box;
     position: relative;
     font-family: 'Albert Sans', 'Times New Roman', Times, serif , sans-serif;
-
 }
 
 /* general */
 body {
-    background-color: #0d0021;
+    background-color: var(--background-color);
 }
 
 #main-container {
@@ -30,14 +34,14 @@ header {
 }
 
 #title-top {
-    color: aliceblue;
+    color: var(--text-color);
     text-align: center;
     font-size: 2.8rem;
 }
 
 /* filters */
 #filters-container {
-color: aliceblue;
+color: var(--text-color);
 margin: 3em 0;
 }
 
@@ -69,8 +73,8 @@ fieldset {
 
 button {
     font-size: 1rem;
-    background-color: #0d0021;
-    color: aliceblue;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-weight: bold;
     border: 2px transparent;
     width: 5em;
@@ -138,7 +142,7 @@ dt, dd {
 }
 
 #info-box {
-    color: aliceblue;
+    color: var(--text-color);
     margin-top: 3em;
 }
 
@@ -155,7 +159,7 @@ dt, dd {
 }
 
 #info-box a {
-    color: aliceblue;
+    color: var(--text-color);
 }
 
 /* table */
@@ -202,7 +206,7 @@ footer {
     display: flex;
     justify-content: flex-start;
     margin: 2em 0;
-    color: aliceblue;
+    color: var(--text-color);
     border-top: solid;
 }
 
@@ -224,5 +228,16 @@ li a {
     text-decoration: none;
     font-weight: lighter;
     font-size: 1.1em;
-    color: aliceblue;
+    color: var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: aliceblue;
+        --text-color: #0d0021;
+    }
+
+    #btn-container {
+        background-color: #0d0021;
+    }
 }

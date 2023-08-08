@@ -1,14 +1,3 @@
-/*
-2046 objects
-
-All data contains "Country"
-All data contains "Region"
-All data contains "Cordinates" with one "c"
-All data contains "Cordinates.Latitude"
-All data contains "Cordinates.Longitude"
-All data contains "Cordinates.Depth" but it is not accurate, most values are 0. According to Wiki the values are different
-
-*/
 
 function main() {
 
