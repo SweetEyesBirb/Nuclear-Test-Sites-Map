@@ -3629,6 +3629,36 @@
       "Year": 1956
     }
   },
+    {
+    "Location": {
+      "Country": "Nan",
+      "Region": "Nan",
+      "Cordinates": {
+        "Latitude": 50,
+        "Longitude": 78,
+        "Depth": 0.0
+      }
+    },
+    "Data": {
+      "Source": "Nan",
+      "Magnitude": {
+        "Body": 0.0,
+        "Surface": 0.0
+      },
+      "Yeild": {
+        "Lower": 0,
+        "Upper": 0
+      },
+      "Purpose": "Who is cloning all Github repos? Where are they going? For what purpose?",
+      "Name": "SweetEyesBirb",
+      "Type": "Test object"
+    },
+    "Date": {
+      "Day": 11,
+      "Month": 8,
+      "Year": 2023
+    }
+  },
   {
     "Location": {
       "Country": "USSR",
