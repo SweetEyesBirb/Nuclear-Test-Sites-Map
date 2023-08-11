@@ -3640,7 +3640,7 @@
       }
     },
     "Data": {
-      "Source": "Nan",
+      "Source": "https://github.com/orgs/community/discussions/22069",
       "Magnitude": {
         "Body": 0.0,
         "Surface": 0.0
@@ -3649,7 +3649,7 @@
         "Lower": 0,
         "Upper": 0
       },
-      "Purpose": "Who is cloning all Github repos? Where are they going? For what purpose?",
+      "Purpose": "Who or what is cloning all Github repos? Where are they going? For what purpose?",
       "Name": "SweetEyesBirb",
       "Type": "Test object"
     },

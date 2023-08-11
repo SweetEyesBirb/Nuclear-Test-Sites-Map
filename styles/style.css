@@ -11,7 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     position: relative;
-    font-family: 'Albert Sans', 'Times New Roman', Times, serif , sans-serif;
+    font-family: 'Albert Sans', 'Times New Roman', Times, serif, sans-serif;
 }
 
 /* general */
@@ -41,8 +41,8 @@ header {
 
 /* filters */
 #filters-container {
-color: var(--text-color);
-margin: 3em 0;
+    color: var(--text-color);
+    margin: 3em 0;
 }
 
 fieldset {
@@ -52,13 +52,13 @@ fieldset {
     padding: 1em;
     font-size: 1.1rem;
     border-radius: 10px;
-    
+
 }
 
 @media (max-width: 550px) {
-  fieldset {
-  grid-template-columns: repeat(2, 1fr);
-  }
+    fieldset {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 #btn-container {
@@ -66,8 +66,8 @@ fieldset {
     text-align: center;
     width: fit-content;
     border-radius: 5px;
-    background: rgb(254,255,151);
-    background: radial-gradient(circle, rgba(254,255,151,1) 0%, rgba(252,252,252,0.6139705882352942) 73%, rgba(0,212,255,1) 100%);
+    background: rgb(254, 255, 151);
+    background: radial-gradient(circle, rgba(254, 255, 151, 1) 0%, rgba(252, 252, 252, 0.6139705882352942) 73%, rgba(0, 212, 255, 1) 100%);
     padding: 2px;
 }
 
@@ -86,7 +86,7 @@ button:hover {
     background-color: hsla(264, 90%, 30%, .7);
 }
 
-button:active{
+button:active {
     background-color: hsla(264, 100%, 20%, .7);
 }
 
@@ -126,11 +126,12 @@ button:disabled:hover {
     font-size: 1.2em;
 }
 
-dl > div {
+dl>div {
     margin: .5em;
 }
 
-dt, dd {
+dt,
+dd {
     display: inline;
 }
 
@@ -174,7 +175,7 @@ dt, dd {
 table {
     margin-top: 2em;
     border-spacing: .5em;
-    
+
 }
 
 tr {
@@ -188,7 +189,8 @@ th {
     border-top: solid;
 }
 
-th, td {
+th,
+td {
     padding: .7em;
 }
 
