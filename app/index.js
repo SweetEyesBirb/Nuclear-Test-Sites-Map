@@ -125,7 +125,7 @@ function main() {
 
         checkBoxes.forEach(box => {
             if (box.checked) {
-                valuesArray.push(box.value);
+                valuesArray.push(box.value); // creates an array of checkboxes values
             }
         });
 
@@ -133,7 +133,7 @@ function main() {
             const dataToFilter = await fetchData();
             dataToFilter.forEach(entry => {
                 if (valuesArray.includes(entry.Location.Country)) {
-                    filteredData.push(entry);
+                    filteredData.push(entry); // creates an array of all the objects in the json that match the selected coutries
                 }
             });
         } catch (error) {
@@ -146,8 +146,8 @@ const btnGo = document.getElementById("btn-go");
 
     btnGo.addEventListener("click", async () => {
         try {
-            const filteredData = await filterData();
-            renderData(filteredData);
+            const filteredData = await filterData(); // stores the result of filterData function into a variable
+            renderData(filteredData);   // renders the filtered data on the map
         } catch (error) {
             console.error("Error is: " + error);
         }
